@@ -15,8 +15,8 @@ def Mukesh(array):
 
 def delete(array, index):
     for x in range(len(array) - index - 1):
-        newArray[index + x - 1] = newArray[(index + x)]
-        array.pop()
+        newArray[index + x] = newArray[(index + x + 1)]
+    array.pop()
     print(array)
     
 
@@ -24,14 +24,23 @@ def delete(array, index):
 def deleteNum(array, val):
     for x in range(len(array)):
         if (array[x] == val):
-           print(x)
            delete(array, x)
            print(array)
-        
+
+# splitting it into multiple functions is what made this so much harder.
+
+def fullDelete(array, val):
+    y = 0
+    for x in range(len(array)):
+        if(array[x] == val):
+            y = y + 1
+            for z in range(len(array) - x - 1):
+                array[x + z] = array[(x + z + 1)]
+    
+    
 
 
-delete(newArray, 6)
-delete(newArray, 7)
+              
 
     
 
