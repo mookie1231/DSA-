@@ -1,4 +1,4 @@
-newArray = [1,6,2,6,3,6,4,5,5,6,10,6,10]
+newArray = [6,1,6,2,6,3,6,4,5,5,6,10,6,10,6]
 
 def Mukesh(array):
     array.append(20)
@@ -29,7 +29,8 @@ def deleteNum(array, val):
 
 # splitting it into multiple functions is what made this so much harder.
 # a bug arises if there are two of the same numbers adjacent to each other 
-
+# every problem causes other problems to arise - shoudl give it a shot but at your stage it is worth looking at optimal solutions faster 
+# I don't think it is efficient trying to discover optimal solution myself 
 
 def fullDelete(array, val):
     y = 0
@@ -40,12 +41,14 @@ def fullDelete(array, val):
             for z in range(len(array) - x - 1):
                 array[x + z] = array[(x + z + 1)]
     
+
+
     for a in range(y):
         array.pop()
     
     print(array)
 
-fullDelete(newArray,5)
+fullDelete(newArray,6)
 
               
 
